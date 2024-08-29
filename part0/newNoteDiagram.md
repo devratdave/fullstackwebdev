@@ -4,7 +4,7 @@ sequenceDiagram
     participant Browser
     participant Server
 
-    Browser->>Server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+    Browser->>Server: POST https://studies.cs.helsinki.fi/exampleapp/new_note with note as Payload
     activate Server
     Server-->>Browser: 302 Status Code and redirects it to https://studies.cs.helsinki.fi/exampleapp/notes 
     deactivate Server
