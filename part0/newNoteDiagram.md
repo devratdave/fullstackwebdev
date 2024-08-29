@@ -1,35 +1,35 @@
 ```mermaid
 
 sequenceDiagram
-    participant browser
-    participant server
+    participant Browser
+    participant Server
 
-    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
-    activate server
-    server-->>browser: 302 Status Code and redirects it to https://studies.cs.helsinki.fi/exampleapp/notes 
-    deactivate server
+    Browser->>Server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+    activate Server
+    Server-->>Browser: 302 Status Code and redirects it to https://studies.cs.helsinki.fi/exampleapp/notes 
+    deactivate Server
 
-    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
-    activate server
-    server-->>browser: Returns the HTML document
-    deactivate server
+    Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+    activate Server
+    Server-->>Browser: Returns the HTML document
+    deactivate Server
 
-    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
-    activate server
-    server-->>browser: Returns the CSS file
-    deactivate server
+    Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    activate Server
+    Server-->>Browser: Returns the CSS file
+    deactivate Server
 
-    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
-    activate server
-    server-->>browser: Returns the JavaScript file
-    deactivate server
+    Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    activate Server
+    Server-->>Browser: Returns the JavaScript file
+    deactivate Server
 
-    Note right of browser: The browser starts executing the JavaScript code that fetches the JSON from the server
+    Note right of Browser: The Browser starts executing the JavaScript code that fetches the JSON from the Server
 
-    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
-    activate server
-    server-->>browser: [{content: 'nueva nota', date: '2024-08-28T15:07:40.292Z'}, ... ]
-    deactivate server
+    Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    activate Server
+    Server-->>Browser: [{content: 'nueva nota', date: '2024-08-28T15:07:40.292Z'}, ... ]
+    deactivate Server
 
     
 ```
