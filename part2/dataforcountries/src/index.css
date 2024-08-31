@@ -1,0 +1,9 @@
+.warning {
+    color: red;
+    background: rgb(240, 240, 240);
+    font-size: 20px;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
