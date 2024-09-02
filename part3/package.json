@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
+    "build": "cd ../part2/thephonebook && npm run build && cp -r dist ../../part3 && cd ../../part3 && npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

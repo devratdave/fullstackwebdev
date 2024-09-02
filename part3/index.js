@@ -74,7 +74,9 @@ app.delete('/api/persons/:id', (req, res)=>{
     const individual = persons.find(person => person.id == id)
     persons = persons.filter((person => person.id != id))
     return res.json({ message : "contact deleted succesfully",
-        name: individual.name
+        id: individual.id,
+        name: individual.name,
+        number: individual.number
      })
 })
 
