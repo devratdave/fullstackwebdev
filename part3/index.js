@@ -76,6 +76,7 @@ app.delete('/api/persons/:id', (req, res)=>{
     return res.json({ message : "contact deleted succesfully",
         id: individual.id,
         name: individual.name,
+        number: individual.number
      })
 })
 
