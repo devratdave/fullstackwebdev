@@ -32,6 +32,7 @@ const generateId = () => {
     return Math.floor(Math.random() * 100000);
 }
 
+
 app.use(cors())
 app.use(express.json())
 app.use(morgan(function (tokens, req, res) {
@@ -44,6 +45,7 @@ app.use(morgan(function (tokens, req, res) {
             JSON.stringify(req.body)
         ].join(' ')
 }))
+app.use(express.static('dist'))
 
 app.get('/api/persons', (req, res)=>{
     return res.send(persons)
@@ -69,8 +71,11 @@ app.get('/api/persons/:id', (req, res)=>{
 
 app.delete('/api/persons/:id', (req, res)=>{
     const id = req.params.id
+    const individual = persons.find(person => person.id == id)
     persons = persons.filter((person => person.id != id))
-    return res.json({ message : "contact deleted succesfully" })
+    return res.json({ message : "contact deleted succesfully",
+        name: individual.name
+     })
 })
 
 app.post('/api/persons', (req, res)=>{
